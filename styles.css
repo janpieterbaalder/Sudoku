@@ -102,6 +102,10 @@ button {
   min-height: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 /* ---------- Picker ---------- */
 
 .picker {
