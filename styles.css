@@ -16,6 +16,9 @@
   --peach: #f3cca0;
   --peach-dim: rgba(243, 204, 160, 0.2);
   --lilac: #d4c2f0;
+  --lilac-dim: rgba(212, 194, 240, 0.18);
+  --cream: #f5e0b3;
+  --cream-dim: rgba(245, 224, 179, 0.18);
   --radius: 14px;
   --radius-sm: 10px;
   --tap: 48px;
@@ -148,6 +151,32 @@ button {
   border-color: var(--line-strong);
 }
 
+.tier-tab[data-tier="all"].active {
+  color: var(--lilac);
+  border-color: rgba(212, 194, 240, 0.4);
+  background: var(--lilac-dim);
+}
+.tier-tab[data-tier="easy"].active {
+  color: var(--mint);
+  border-color: rgba(184, 230, 200, 0.4);
+  background: var(--mint-dim);
+}
+.tier-tab[data-tier="medium"].active {
+  color: var(--blue);
+  border-color: rgba(185, 214, 241, 0.4);
+  background: var(--blue-dim);
+}
+.tier-tab[data-tier="hard"].active {
+  color: var(--peach);
+  border-color: rgba(243, 204, 160, 0.4);
+  background: var(--peach-dim);
+}
+.tier-tab[data-tier="expert"].active {
+  color: var(--pink);
+  border-color: rgba(241, 184, 196, 0.4);
+  background: var(--pink-dim);
+}
+
 .puzzle-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(74px, 1fr));
@@ -278,7 +307,7 @@ button {
 
 .time {
   font-size: 13px;
-  color: var(--muted);
+  color: var(--cream);
   font-variant-numeric: tabular-nums;
 }
 
@@ -370,7 +399,12 @@ button {
   font-size: 14px;
   color: var(--mint);
   padding: 8px;
-  background: var(--mint-dim);
+  background: linear-gradient(
+    135deg,
+    var(--mint-dim),
+    var(--lilac-dim) 60%,
+    var(--cream-dim)
+  );
   border-radius: var(--radius-sm);
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -441,10 +475,22 @@ button {
   background: var(--panel-2);
 }
 
+#undo:active {
+  color: var(--blue);
+  background: var(--blue-dim);
+  border-color: rgba(185, 214, 241, 0.4);
+}
+
+#erase:active {
+  color: var(--pink);
+  background: var(--pink-dim);
+  border-color: rgba(241, 184, 196, 0.4);
+}
+
 .action.on {
   color: var(--lilac);
   border-color: rgba(212, 194, 240, 0.4);
-  background: rgba(212, 194, 240, 0.1);
+  background: var(--lilac-dim);
 }
 
 /* Misc */
