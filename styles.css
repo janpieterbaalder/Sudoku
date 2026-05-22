@@ -75,18 +75,18 @@ button {
 .topbar h1 {
   margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: baseline;
   justify-content: center;
-  gap: 2px;
-  line-height: 1.05;
+  gap: 6px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .title-main {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
   background: linear-gradient(120deg, var(--mint) 0%, var(--lilac) 55%, var(--cream) 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -94,10 +94,9 @@ button {
 }
 
 .title-sub {
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
   color: var(--muted);
 }
 
