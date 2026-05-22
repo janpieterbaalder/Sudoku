@@ -147,7 +147,14 @@ function showView(v) {
   els.game.hidden = v !== "game";
   els.back.hidden = v !== "game";
   els.reset.hidden = v !== "game";
-  els.title.textContent = v === "picker" ? "Sudoku" : `Puzzel ${state.current?.id ?? ""}`;
+  if (v === "picker") {
+    els.title.innerHTML =
+      '<span class="title-main">Sudoku</span>' +
+      '<span class="title-sub">Opwekking 2026</span>';
+  } else {
+    const id = state.current?.id ?? "";
+    els.title.innerHTML = `<span class="title-main">Puzzel ${id}</span>`;
+  }
   if (v === "picker") {
     pauseTimer();
     renderPicker();
