@@ -123,10 +123,12 @@ button {
 
 .tier-tabs {
   display: flex;
+  flex-shrink: 0;
   gap: 6px;
   overflow-x: auto;
+  overflow-y: visible;
   scrollbar-width: none;
-  padding-bottom: 4px;
+  padding: 2px 0 4px;
 }
 
 .tier-tabs::-webkit-scrollbar {
