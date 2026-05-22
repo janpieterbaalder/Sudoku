@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no, maximum-scale=1"
+  />
+  <meta name="theme-color" content="#0f1115" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Sudoku" />
+  <title>Sudoku</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button id="back" class="icon-btn" aria-label="Terug naar lijst" hidden>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <h1 id="title">Sudoku</h1>
+    <button id="reset" class="icon-btn" aria-label="Puzzel opnieuw beginnen" hidden>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+    </button>
+  </header>
+
+  <main id="main">
+    <section id="picker" class="picker">
+      <div class="tier-tabs" role="tablist">
+        <button data-tier="all" class="tier-tab active">Alle</button>
+        <button data-tier="easy" class="tier-tab">Eenvoudig</button>
+        <button data-tier="medium" class="tier-tab">Gemiddeld</button>
+        <button data-tier="hard" class="tier-tab">Moeilijk</button>
+        <button data-tier="expert" class="tier-tab">Expert</button>
+      </div>
+      <div id="puzzle-list" class="puzzle-list"></div>
+    </section>
+
+    <section id="game" class="game" hidden>
+      <div class="meta">
+        <span id="meta-diff" class="pill"></span>
+        <span id="meta-time" class="time">00:00</span>
+      </div>
+      <div id="board" class="board" aria-label="Sudokubord"></div>
+      <div id="status" class="status" hidden></div>
+      <div class="pad">
+        <button class="num" data-n="1">1</button>
+        <button class="num" data-n="2">2</button>
+        <button class="num" data-n="3">3</button>
+        <button class="num" data-n="4">4</button>
+        <button class="num" data-n="5">5</button>
+        <button class="num" data-n="6">6</button>
+        <button class="num" data-n="7">7</button>
+        <button class="num" data-n="8">8</button>
+        <button class="num" data-n="9">9</button>
+      </div>
+      <div class="actions">
+        <button id="undo" class="action">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-15-6.7L3 13"/></svg>
+          <span>Terug</span>
+        </button>
+        <button id="notes" class="action">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+          <span>Notities</span>
+        </button>
+        <button id="erase" class="action">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l6-6a2 2 0 0 1 2.83 0l6.34 6.34a2 2 0 0 1 0 2.83l-3.17 3.17H9L3 12z"/><path d="M9 18l-2.5-2.5"/></svg>
+          <span>Wis</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
