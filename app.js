@@ -277,7 +277,6 @@ function buildBoard() {
 function renderBoard() {
   const c = state.current;
   const conflicts = computeConflicts(c.values);
-  const selVal = c.selected != null ? c.values[c.selected] : 0;
 
   for (let i = 0; i < 81; i++) {
     const el = cellEls[i];
@@ -291,11 +290,7 @@ function renderBoard() {
     el.classList.toggle("selected", c.selected === i);
     el.classList.toggle(
       "peer",
-      c.selected != null && c.selected !== i && isPeer(c.selected, i) && c.values[i] !== selVal,
-    );
-    el.classList.toggle(
-      "same",
-      c.selected != null && c.selected !== i && val !== 0 && val === selVal,
+      c.selected != null && c.selected !== i && isPeer(c.selected, i),
     );
 
     if (val !== 0) {

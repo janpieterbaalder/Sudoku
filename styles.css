@@ -329,9 +329,6 @@ button {
 .cell.peer {
   background: var(--panel-2);
 }
-.cell.same {
-  background: var(--blue-dim);
-}
 .cell.selected {
   background: var(--peach-dim);
   box-shadow: inset 0 0 0 2px var(--peach);
