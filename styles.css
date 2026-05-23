@@ -404,12 +404,12 @@ button {
 
 .cell .notes {
   position: absolute;
-  inset: 4%;
+  inset: 6%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  font-size: clamp(8px, 1.7vw, 10px);
-  color: var(--muted);
+  font-size: clamp(9px, 2.2vw, 12px);
+  color: var(--lilac);
   font-weight: 500;
   pointer-events: none;
 }
